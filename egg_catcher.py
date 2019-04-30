@@ -1,4 +1,4 @@
-from itertools import count
+from itertools import cycle
 from random import randrange
 from tkinter import Canvas, Tk, messagebox, font
 
@@ -8,6 +8,7 @@ CANVAS_HEIGHT = 400
 CANVAS_BACKGROUND = 'deep sky blue'
 GRASS_COLOR = 'sea green'
 SUN_COLOR = 'orange'
+COLOR_CYCLE = cycle(['light blue', 'light green', 'light pink', 'light yellow', 'light cyan'])
 
 # Create a window.
 root = Tk()
