@@ -8,7 +8,14 @@ CANVAS_HEIGHT = 400
 CANVAS_BACKGROUND = 'deep sky blue'
 GRASS_COLOR = 'sea green'
 SUN_COLOR = 'orange'
+
 COLOR_CYCLE = cycle(['light blue', 'light green', 'light pink', 'light yellow', 'light cyan'])
+EGG_WIDTH = 45
+EGG_HEIGHT = 55
+EGG_SCORE = 10
+EGG_SPEED = 500
+EGG_INTERVAL = 4000
+DIFFICULTY_FACTOR = 0.95
 
 # Create a window.
 root = Tk()
