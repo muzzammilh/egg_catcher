@@ -3,8 +3,8 @@ from random import randrange
 from tkinter import Canvas, Tk, messagebox, font
 
 # Various game settings
-CANVAS_WIDTH = 1000
-CANVAS_HEIGHT = 500
+CANVAS_WIDTH = 800
+CANVAS_HEIGHT = 400
 CANVAS_BACKGROUND = 'deep sky blue'
 GRASS_COLOR = 'sea green'
 SUN_COLOR = 'orange'
@@ -40,8 +40,17 @@ catcher_start_y = CANVAS_HEIGHT - CATCHER_HEIGHT - 20
 catcher_start_x2 = catcher_start_x + CATCHER_WIDTH
 catcher_start_y2 = catcher_start_y + CATCHER_HEIGHT
 
-catcher = c.create_arc(catcher_start_x, catcher_start_y, catcher_start_x2, catcher_start_y2, start=200, extend=140,
+catcher = c.create_arc(catcher_start_x, catcher_start_y, catcher_start_x2, catcher_start_y2, start=200, extent=140,
                        style='arc', outline=CATCHER_COLOR, width=3)
+
+# Scores and live counter
+game_font = font.nametofont('TkFixedFont')
+game_font.config(size=18)
+
+score = 0
+score_text = c.create_text(10, 10, anchor='nw', font=game_font, fill='darkblue', text='Score: ' + str(score))
+lives_remaining = 3
+lives_text = c.create_text(CANVAS_HEIGHT - 10, 10, anchor='ne', font=game_font, fill='darkblue', text='Lives ' + str(lives_remaining))
 
 # Combine everything and draw
 c.pack()
