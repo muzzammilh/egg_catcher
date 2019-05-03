@@ -50,7 +50,7 @@ game_font.config(size=18)
 score = 0
 score_text = c.create_text(10, 10, anchor='nw', font=game_font, fill='darkblue', text='Score: ' + str(score))
 lives_remaining = 3
-lives_text = c.create_text(CANVAS_HEIGHT - 10, 10, anchor='ne', font=game_font, fill='darkblue', text='Lives ' + str(lives_remaining))
+lives_text = c.create_text(CANVAS_WIDTH - 10, 10, anchor='ne', font=game_font, fill='darkblue', text='Lives ' + str(lives_remaining))
 
 # Combine everything and draw
 c.pack()
