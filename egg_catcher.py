@@ -67,3 +67,12 @@ def create_eggs():
     eggs.append(new_egg)
     root.after(EGG_INTERVAL, create_eggs)
 
+
+def move_eggs():
+    for egg in eggs:
+        (egg_x, egg_y, egg_x2, egg_y2) = c.coords(egg)
+        c.move(egg, 0, 10)
+        if egg_y2 > CANVAS_HEIGHT:
+            egg_dropped(egg)
+
+    root.after(egg_speed, move_eggs)
