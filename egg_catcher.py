@@ -52,6 +52,18 @@ score_text = c.create_text(10, 10, anchor='nw', font=game_font, fill='darkblue',
 lives_remaining = 3
 lives_text = c.create_text(CANVAS_WIDTH - 10, 10, anchor='ne', font=game_font, fill='darkblue', text='Lives ' + str(lives_remaining))
 
+# Create eggs
+eggs = []
+
 # Combine everything and draw
 c.pack()
 c.mainloop()
+
+
+def create_eggs():
+    x = randrange(10, 740)
+    y = 40
+    new_egg = c.create_oval(x, y, x+ EGG_WIDTH, y + EGG_HEIGHT, fill=next(COLOR_CYCLE), width=0)
+    eggs.append(new_egg)
+    root.after(EGG_INTERVAL, create_eggs)
+
